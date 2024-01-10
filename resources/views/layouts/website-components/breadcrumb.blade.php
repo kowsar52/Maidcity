@@ -1,4 +1,4 @@
-<section class="breadcrumb-area breadcrumb-bg" data-background="assets/website/img/bg/breadcrumb_bg.jpg">
+{{-- <section class="breadcrumb-area breadcrumb-bg" data-background="assets/website/img/bg/breadcrumb_bg.jpg">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -29,4 +29,4 @@
         <img src="{{ asset('assets/website/img/images/breadcrumb_shape01.png') }}" alt="">
         <img src="{{ asset('assets/website/img/images/breadcrumb_shape02.png') }}" alt="">
     </div>
-</section>
+</section> --}}

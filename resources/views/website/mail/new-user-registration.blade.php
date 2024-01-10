@@ -1,3 +1,8 @@
+<?php
+    $data = (object) $data ;
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>

@@ -6,7 +6,7 @@
     @include('layouts.website-components.breadcrumb')
     <!-- breadcrumb-area-end -->
     @if(isset($aboutUs->items) && !empty($aboutUs->items))
-        <section class="about-area-eight pt-120 pb-5">
+        <section class="about-area-eight pt-100 pb-5">
             <div class="container">
                 <div class="row">
                     <div class="col-12">

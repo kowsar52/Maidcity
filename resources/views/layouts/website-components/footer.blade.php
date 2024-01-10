@@ -5,7 +5,7 @@
                 <div class="row mb-3">
                         @if(isset(\App\Services\GeneralService::getContactDetail()->items))
                             @foreach(\App\Services\GeneralService::getContactDetail()->items as $key => $foooter)
-                            <div class="col-lg-3 col-md-7">
+                            <div class="col-sm-6 col-md-4">
                                 <div class="footer-widget">
                                     <h4 class="fw-title">{{ $foooter['branch_title'] }}</h4>
                                     <div class="footer-info">
@@ -48,7 +48,7 @@
                             </div>
                             @endforeach
                         @else
-                        <div class="col-lg-3 col-md-7">
+                        <div class="col-sm-6 col-md-4">
                             <div class="footer-widget">
                                 <h4 class="fw-title">{{ __('general.Kovan_branch') }}</h4>
                                 <div class="footer-info">
@@ -103,9 +103,9 @@
                             </div>
                         </div>
                     </div>-->
-                </div>
-                <div class="row">
-                    <div class="col-lg-2 col-md-5 col-sm-6">
+                {{-- </div> --}}
+                {{-- <div class="row"> --}}
+                    <div class="col-md-4 col-sm-6">
                         <div class="footer-widget">
                             <h4 class="fw-title">{{ __('general.menu') }}</h4>
                             <div class="footer-link">
@@ -128,7 +128,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-5 col-sm-6">
+                    <div class="col-md-4 col-sm-6">
                         <div class="footer-widget">
                             <h4 class="fw-title">Quick Links</h4>
                             <div class="footer-link">
@@ -144,7 +144,11 @@
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
+        </div>
+    </div>
+    <div class="footer-area bg-white">
+        <div class="container">
+            <div class="footer-bottom border-0">
                 <div class="row align-items-center">
                     <div class="col-md-4">
                         <div class="left-sider">

@@ -1,18 +1,21 @@
 <?php
 
-use App\Http\Controllers\Auth\ForgotPasswordController;
-use App\Http\Controllers\Auth\LoginUserController;
-use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\BioDataShortlistController;
-use App\Http\Controllers\EmployerMDWRequirementController;
-use App\Http\Controllers\EmployerQuestionAnswerController;
-use App\Http\Controllers\FdwBioDataController;
-use App\Http\Controllers\JobApplyController;
+use App\Services\GeneralService;
+use App\Mail\NewUserRegistration;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JoinUsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\WebsiteController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JobApplyController;
+use App\Http\Controllers\FdwBioDataController;
+use App\Http\Controllers\Auth\LoginUserController;
+use App\Http\Controllers\BioDataShortlistController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\EmployerMDWRequirementController;
+use App\Http\Controllers\EmployerQuestionAnswerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +27,48 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+//Mail Test
+Route::get('/test-mail', function(){
+    $data = [
+        'name' => 'Abc',
+        'email' => 'abc@gmail.com',
+        'contact_number' => '012235354',
+    ];
+    $subject = __('general.new_employer_registration');
+    $role_name = 'Employer';
+    Mail::to(GeneralService::getMail('super_admin'))->send(new NewUserRegistration($data,$subject,$role_name));
+
+    // // dd(config('mail'));
+    //Mail::to(GeneralService::getMail('super_admin'))->send(new NewUserRegistration($data, 'example@gmail.com', 'hello@gmail.com', 'test', $role_name, 'title'));
+
+    // $objDemo = new \stdClass();
+    // $objDemo->title = 'Test';
+    // $objDemo->from = 'example@gmail.com';
+    // $objDemo->to = 'hello@gmail.com';
+    // $objDemo->subject = 'Test subject';
+
+    // // $data = []; // Your data to be passed to the email view
+
+    // $mail = new NewUserRegistration($data, $objDemo->from, $objDemo->to, $objDemo->subject, $role_name, $objDemo->title);
+    // Mail::send($mail);
+
+    //New approch
+    // $data = [
+    //     'name' => 'Abc',
+    //     'email' => 'abc@gmail.com',
+    //     'contact_number' => '012235354',
+    // ];
+    // $subject = __('general.new_employer_registration');
+    // $role_name = 'Employer';
+    // $from = $data['email'];
+    // $to = GeneralService::getMail('super_admin');
+    // Mail::send(new NewUserRegistration($data, $from, $to, $subject, $role_name));
+
+    return 'Mail send successfully';
+
+});
+
 Route::name('website.')->group(function () {
     Route::get('/', [WebsiteController::class, 'homePage'])->name('home-page');
     Route::get('/about-us', [WebsiteController::class, 'about'])->name('about-us');
@@ -67,4 +112,7 @@ Route::name('website.')->group(function () {
     Route::get('/job-share-detail/{job_id}',[JobApplyController::class,'jobShareDetail'])->name('job-share-detail');
     Route::get('/mdw-biodata-import', [WebsiteController::class, 'mdwBiodataImport'])->name('mdw-biodata-import');
     Route::post('/mdw-biodata-import-store', [WebsiteController::class, 'mdwBiodataImportStore'])->name('mdw-biodata-import-store');
+
 });
+
+

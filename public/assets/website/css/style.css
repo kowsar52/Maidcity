@@ -554,7 +554,7 @@ label {
 }
 
 .heder-top-wrap {
-    background: var(--tg-secondary-color);
+    background: var(--tg-primary-color);
     overflow: hidden;
     padding: 9px 0;
 }
@@ -9661,7 +9661,13 @@ label {
 .footer-bg {
     background-position: center;
     background-size: cover;
-    background-color: #ED1C24 !important;
+    background-color: var(--tg-primary-color);
+}
+
+.footer-bg-top {
+    background-position: center;
+    background-size: cover;
+    background-color: #f14e54b8;
 }
 
 .footer-top {
@@ -9830,17 +9836,17 @@ label {
 
 .footer-bottom {
     border-top: 1px solid var(--tg-primary-color);
-    padding: 35px 0;
+    padding: 10px 0;
 }
 
-.footer-bottom .f-logo {
+/* .footer-bottom .f-logo {
     margin-bottom: 10px;
-}
+} */
 
 .copyright-text p {
     margin-bottom: 0px;
     font-size: 13px;
-    color: var(--tg-white);
+    color: var(--tg-primary-color);
     text-align: center;
 }
 

@@ -35,7 +35,7 @@
             @if (Route::currentRouteName() == 'website.home-page')
                 @isset($services)
                     <div class="col-12 text-center">
-                        <a href="{{ route('website.services.index') }}" class="btn btn-primary">
+                        <a href="{{ route('website.services.index') }}" class="btn">
                             {{ __('general.find_out_more') }}
                         </a>
                     </div>

@@ -7,6 +7,7 @@
                     <div class="carousel-item @if($loop->iteration == 1) active @endif">
                         <img src="{{ asset('storage/'.$images) }}"
                              alt="" data-aos="fade-left" data-aos-delay="400" class="mb-2 w-100 slider_img_h">
+                        <div class="overlay"></div>
                         <div class="carousel-caption d-none d-md-block">
                             <h5 class="fs-1 text-white text-stroke">{{ $slider->items ??  __('general.welcome_to_maidcity') }}</h5>
                             <p class="fs-4 fw-bold text-white text-stroke">{{ $licenseNo->items ?? __('general.license_no_97C4834') }}</p>
@@ -14,9 +15,19 @@
                     </div>
                 @endforeach
                 @else
-                    <div class="carousel-item active">
-                        <img src="{{  asset('assets/website/img/images/main-banner-slider-D2.png') }}"
+                    <div class="carousel-item active position-relative">
+                        <img src="{{  asset('assets/website/test-slider.jpg') }}"
                              alt="" data-aos="fade-left" data-aos-delay="400" class="mb-2 w-100 slider_img_h">
+                        <div class="overlay"></div>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="fs-1 text-white text-stroke">{{ $slider->items ??  __('general.welcome_to_maidcity') }}</h5>
+                            <p class="fs-4 fw-bold text-white text-stroke">{{ __('general.license_no_97C4834') }}</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item active position-relative">
+                        <img src="{{  asset('assets/website/main-banner-slider-D2.png') }}"
+                             alt="" data-aos="fade-left" data-aos-delay="400" class="mb-2 w-100 slider_img_h">
+                        <div class="overlay"></div>
                         <div class="carousel-caption d-none d-md-block">
                             <h5 class="fs-1 text-white text-stroke">{{ $slider->items ??  __('general.welcome_to_maidcity') }}</h5>
                             <p class="fs-4 fw-bold text-white text-stroke">{{ __('general.license_no_97C4834') }}</p>

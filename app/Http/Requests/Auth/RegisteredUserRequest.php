@@ -92,12 +92,18 @@ class RegisteredUserRequest extends FormRequest
             $data = Employer::create($fields);
             $subject = __('general.new_employer_registration');
             $role_name = $role->name;
+            // $from = $data->email;
+            // $to = GeneralService::getMail('super_admin');
+            // Mail::send(new NewUserRegistration($data, $from, $to, $subject, $role_name));
             Mail::to(GeneralService::getMail('super_admin'))->send(new NewUserRegistration($data,$subject,$role_name));
         }
         elseif ($role->name === 'Staff'){
             $data = Staff::create($fields);
             $subject = __('general.new_staff_registration');
             $role_name = $role->name;
+            // $from = $data->email;
+            // $to = GeneralService::getMail('super_admin');
+            // Mail::send(new NewUserRegistration($data, $from, $to, $subject, $role_name));
             Mail::to(GeneralService::getMail('super_admin'))->send(new NewUserRegistration($data,$subject,$role_name));
         }
     }

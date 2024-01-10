@@ -462,7 +462,7 @@ class GeneralService
     public static function getMail($name = null): array|string
     {
         $data = [
-            'super_admin' => 'Contact@maidcity.com.sg',
+            'super_admin' => 'contact@maidcity.com.sg',
         ];
         if (!empty($name)) {
             $data = $data[$name];
