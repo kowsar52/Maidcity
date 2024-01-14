@@ -50,6 +50,36 @@
             -webkit-text-stroke-width: 1px;
             -webkit-text-stroke-color: var(--tg-black);
         }
+        .recommended-mdw-card{
+            height: 300px;
+            position: relative;
+        }
+        .avatar-div img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        .flag-div img{
+            width: 25px;
+            height: 20px;
+            border-radius: 2px;
+        }
+        /* The overlay effect - lays on top of the container and over the image */
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            background: #cd8285; /* Black see-through */
+            color: white !important;
+            width: 100%;
+            transition: .5s ease;
+            opacity:0;
+            font-size: 14px;
+            padding: 12px;
+        }
+        /* When you mouse over the container, fade in the overlay title */
+        .recommended-mdw-card:hover .card-overlay {
+            opacity: 1;
+        }
         @media only screen and (max-width: 579px) {
             .slider_img_h {
                 height: 195px !important;
