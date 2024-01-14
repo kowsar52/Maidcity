@@ -798,6 +798,7 @@ $('.popup-video').magnificPopup({
 });
 
 
+
 /*=============================================
 	=    		 Wow Active  	         =
 =============================================*/
@@ -836,6 +837,7 @@ $('#floatingWhatsapp').floatingWhatsApp({
     position: 'left',
     headerTitle: 'WhatsApp',
 });
+
 
 
 })(jQuery);

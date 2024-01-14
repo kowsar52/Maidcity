@@ -93,5 +93,27 @@
                 $(this).remove();
             });
         });
+        /*--------------------------
+     slider carousel
+---------------------------- */
+var intro_carousel = $('.intro-carousel');
+intro_carousel.owlCarousel({
+	loop:true,
+	nav:true,		
+	autoplay:false,
+	dots:false,
+	navText: ["<i class='fa fa-chevron-left owl_icon'></i>","<i class='fa fa-chevron-right owl_icon'></i>"],
+	responsive:{
+		0:{
+			items:1
+		},
+		600:{
+			items:1
+		},
+		1000:{
+			items:1
+		}
+	}
+});
     </script>
 @endsection

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{asset('assets/website/css/magnific-popup.css')}}">
     <link rel="stylesheet" href="{{asset('assets/website/css/fontawesome-all.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/website/css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/website/css/icon.css')}}">
     <link rel="stylesheet" href="{{asset('assets/website/css/odometer.css')}}">
     <link rel="stylesheet" href="{{asset('assets/website/css/jarallax.css')}}">
     <link rel="stylesheet" href="{{asset('assets/website/css/swiper-bundle.min.css')}}">
@@ -25,6 +26,9 @@
     <link rel="stylesheet" href="{{asset('assets/website/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets/website/css/custom.css')}}">
     <link rel="stylesheet" href="{{asset('assets/website/css/responsive.css')}}">
+    <!-- owl.carousel css -->
+		<link rel="stylesheet" href="{{asset('assets/website/css/owl.carousel.css')}}">
+		<link rel="stylesheet" href="{{asset('assets/website/css/owl.transitions.css')}}">
     @yield('css-after')
     @stack('styles')
     <title>{{ $pageTitle ?? '' }}</title>
@@ -46,6 +50,7 @@
     <div class="modal fade" id="bioDataModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
     @include('layouts.website-components.footer')
     <script src="{{asset('assets/website/js/vendor/jquery-3.6.0.min.js')}}"></script>
+    <script src="{{asset('assets/website/js/vendor/vendor/jquery-1.12.4.min.js')}}"></script>
     <script src="{{asset('assets/website/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('assets/website/js/jquery.magnific-popup.min.js')}}"></script>
     <script src="{{asset('assets/website/js/jquery.odometer.min.js')}}"></script>
@@ -68,6 +73,11 @@
     <script src="{{asset('assets/website/js/sweetalert2.min.js')}}"></script>
     <script src="{{asset('assets/website/js/wow.min.js')}}"></script>
     <script src="{{asset('assets/website/js/main.js')}}"></script>
+    <!-- owl.carousel js -->
+	<script src="{{asset('assets/website/js/owl.carousel.min.js')}}"></script>
+    <!-- plugins js -->
+	<script src="{{asset('assets/website/js/plugins.js')}}"></script>
+    
     @include('layouts.website-components.facebook-floating-button')
     @include('layouts.website-components.global-script')
     @include('layouts.website-components.session-messages')
