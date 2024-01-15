@@ -90,14 +90,14 @@
                                         src="{{ isset($d->nationality) ? \App\Services\GeneralService::getCountryImage($d->nationality) : asset('assets/website/img/flag/other.png') }}"
                                         alt="" class="">
                                 </div>
-                                <a href="{{ route('website.bio-data.show',$d->id) }}" target="_blank">
+                                <a href="{{ route('website.bio-data.show',$d->id) }}" target="_blank" class="stretched-link">
                                     <div class="avatar-div text-center">
                                         <img class="card-img-top" src="{{ \App\Services\GeneralService::getBioDataImage($d->photo) }}" alt="image">
                                     </div>
                                 </a>
                                 <div class="card-body">
                                     <h5 class="card-title mt-3">
-                                        <a href="{{ route('website.bio-data.show',$d->id) }}">
+                                        <a href="{{ route('website.bio-data.show',$d->id) }}" target="_blank" class="stretched-link">
                                         {{ $d->name  }}
                                         </a>
                                     </h5>

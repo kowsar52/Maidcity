@@ -48,17 +48,19 @@
                             </div>
                             <div class="navbar-wrap main-menu d-none d-lg-flex">
                                 <ul class="navigation">
-                                    <li @class(['active' => request()->routeIs('website.home-page') ])>
+                                    <li class="{{ Request::route()->getName() == 'website.home-page' ? 'active' : '' }}">
                                         <a href="{{ route('website.home-page') }}">{{ __('general.home') }}</a>
                                     </li>
-                                    <li @class(['active' => request()->routeIs('website.about-us') ])>
+                                    <li class="{{ Request::route()->getName() == 'website.about-us' ? 'active' : '' }}">
                                         <a href="{{ route('website.about-us') }}">{{ __('general.about_us') }}</a></li>
-                                    <li @class(['active' => request()->routeIs('website.services.index') ])>
+                                    <li class="{{ Request::route()->getName() == 'website.services.index' ? 'active' : '' }}">
                                         <a href="{{ route('website.services.index') }}">{{ __('general.services') }}</a></li>
-                                    <li @class(['active' => request()->routeIs('website.contact-us') ])>
+                                    <li class="{{ Request::route()->getName() == 'website.contact-us' ? 'active' : '' }}" >
                                         <a href="{{ route('website.contact-us') }}">{{ __('general.contact_us') }}</a></li>
-                                    <li @class(['active' => request()->routeIs('website.jobs') ])><a href="{{ route('website.jobs') }}">{{ __('general.jobs') }}</a></li>
-                                    <li @class(['active' => request()->routeIs('website.bio-data') ])><a href="{{ route('website.bio-data.index') }}">{{ __('general.bio_data') }}</a></li>
+                                    <li class="{{ Request::route()->getName() == 'website.jobs' ? 'active' : '' }}">
+                                        <a href="{{ route('website.jobs') }}">{{ __('general.jobs') }}</a></li>
+                                    <li class="{{ Request::route()->getName() == 'website.bio-data' ? 'active' : '' }}" >
+                                        <a href="{{ route('website.bio-data.index') }}">{{ __('general.bio_data') }}</a></li>
                                 </ul>
                             </div>
                             <div class="header-action d-none d-md-block">
