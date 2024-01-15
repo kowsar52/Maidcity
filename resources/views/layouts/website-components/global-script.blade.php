@@ -5,9 +5,9 @@
     });
 
     function initializeFields() {
-        $('.solid-validation').parsley().on('form:submit', function () {
-            showWait();
-        });
+        // $('.solid-validation').parsley().on('form:submit', function () {
+        //     showWait();
+        // });
     }
 
     function showWait() {

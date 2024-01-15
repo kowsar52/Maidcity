@@ -114,6 +114,7 @@
 @endsection
 @section('innerScript')
 <script>
+
     $(document).ready(function(){
         console.log('alamin');
 
@@ -136,7 +137,7 @@
        });
 </script>
     <script>
-       
+
         /*--------------------------
      slider carousel
 ---------------------------- */
