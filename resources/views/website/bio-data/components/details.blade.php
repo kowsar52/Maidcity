@@ -30,8 +30,20 @@
                 <td>{{isset($model->weight) ? $model->weight.'kg' : 'N/A'}}</td>
             </tr>
             <tr>
+                <th class="w-50">{{__('general.no_of_siblings')}}</th>
+                <td>{{ isset($model->number_of_siblings) ? $model->number_of_siblings : 'N/A' }}</td>
+            </tr>
+            <tr>
                 <th class="w-50">{{__('general.martial_status')}}</th>
                 <td>{{isset($model->marital_status) ? \App\Services\GeneralService::maritalStatusForDropdown($model->marital_status) : 'N/A'}}</td>
+            </tr>
+            <tr>
+                <th class="w-50">{{__('general.no_of_children')}}</th>
+                <td>{{ isset($model->no_of_children) ? $model->no_of_children : 'N/A' }}</td>
+            </tr>
+            <tr>
+                <th class="w-50">{{__('Age of Children')}}</th>
+                <td>{{ isset($model->age_of_children) ? $model->age_of_children : 'N/A' }}</td>
             </tr>
             <tr>
                 <th class="w-50">{{__('general.nationality')}}</th>
@@ -45,10 +57,7 @@
                 <th class="w-50">{{__('general.education')}}</th>
                 <td>{{ isset($model->education_level) ? \App\Services\GeneralService::getEducation($model->education_level) : 'N/A' }}</td>
             </tr>
-            <tr>
-                <th class="w-50">{{__('general.no_of_children')}}</th>
-                <td>{{ isset($model->no_of_children) ? $model->no_of_children : 'N/A' }}</td>
-            </tr>
+
             <tr>
                 <th class="w-50">{{__('general.off_days')}}</th>
                 <td>

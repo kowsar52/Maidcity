@@ -12,30 +12,25 @@ class GeneralService
     public static function getCountries($id = null)
     {
         $data = [
-            1 => 'Singapore',
-            2 => 'Malaysia',
-            3 => 'Hong Kong',
-            4 => 'Taiwan',
-            5 => 'China',
-            6 => 'South Korea',
+            //New array
+            1 => 'Bangladesh',
+            2 => 'Cambodia',
+            3 => 'China',
+            4 => 'Hong Kong',
+            5 => 'India',
+            6 => 'Indonesia',
             7 => 'Japan',
-            8 => 'Thailand',
-            9 => 'Indonesian',
-            10 => 'Philippines',
-            11 => 'Kuwait',
-            12 => 'Cambodia',
-            13 => 'Indian',
-            14 => 'Sri Lanka',
-            15 => 'Bangladesh',
-            16 => 'Myanmar',
-            17 => 'Macau',
-            18 => 'U.A.E',
-            19 => 'Jordan',
-            20 => 'Qatar',
-            21 => 'Saudi Arabia',
-            22 => 'Oman',
-            23 => 'Bahrain',
-            24 => 'Others'
+            8 => 'Macau',
+            9 => 'Malaysia',
+            10 => 'Middle East',
+            11 => 'Myanmar',
+            12 => 'Philippines',
+            13 => 'Singapore',
+            14 => 'South Korea',
+            15 => 'Sri Lanka',
+            16 => 'Taiwan',
+            17 => 'Thailand',
+            18 => 'Others',
         ];
         if (!is_null($id)) {
             $data = $data[$id];
@@ -47,21 +42,22 @@ class GeneralService
     public static function nationalityForDropdown($id = null)
     {
         $data = [
-            1 => __('general.singapore'),
+            1 => __('general.bangladeshi'),
             2 => __('general.burmese'),
-            3 => __('general.indonesian'),
+            3 => __('general.cambodian'),
             4 => __('general.filipino'),
-            5 => __('general.cambodian'),
+            5 => __('general.hong_kong'),
             6 => __('general.indian'),
-            7 => __('general.mizoram'),
+            7 => __('general.indonesian'),
             8 => __('general.srilankan'),
-            9 => __('general.bangladeshi'),
+            9 => __('general.macau'),
             10 => __('general.malaysian'),
-            11 => __('general.thai'),
-            12 => __('general.hong_kong'),
+            11 => __('general.singapore'),
+            12 => __('general.soute_corea'),
             13 => __('general.taiwan'),
-            14 => __('general.middle_east'),
-            15 => __('general.other'),
+            14 => __('general.thai'),
+            16 => __('general.middle_east'),
+            15 => __('general.other')
         ];
         if (!is_null($id)) {
             $data = $data[$id];
@@ -73,21 +69,24 @@ class GeneralService
     public static function countryForDropdown($id = null)
     {
         $data = [
-            1 => __('general.singapore'),
-            //2 => __('general.myanmar'),
-            //3 => __('general.indonesia'),
-            //4 => __('general.philippines'),
-            //5 => __('general.cambodia'),
-            //6 => __('general.india'),
-            //7 => __('general.india_mizoram'),
-            //8 => __('general.srilanka'),
-            //9 => __('general.bangladesh'),
-            10 => __('general.malaysia'),
-            //11 => __('general.thai'),
-            12 => __('general.hong_kong'),
-            13 => __('general.taiwan'),
-            14 => __('general.middle_east'),
-            15 => __('general.other'),
+            1 => __('general.bangladesh'),
+            2 => __('general.cambodia'),
+            3 => __('general.china'),
+            4 => __('general.hong_kong'),
+            5 => __('general.india'),
+            6 => __('general.indonesia'),
+            7 => __('general.japan'),
+            8 => __('general.macau'),
+            9 => __('general.malaysia'),
+            10 => __('general.middle_east'),
+            11 => __('general.myanmar'),
+            12 => __('general.philippines'),
+            13 => __('general.singapore'),
+            14 => __('general.south_korea'),
+            15 => __('general.srilanka'),
+            16 => __('general.taiwan'),
+            17 => __('general.thailand'),
+            18 => __('general.others'),
         ];
         if (!is_null($id)) {
             $data = $data[$id];
@@ -212,7 +211,8 @@ class GeneralService
             2 => 'Care of Elderly',
             3 => 'Care of Disable',
             4 => 'General Housework',
-            5 => 'Cooking',
+            // 5 => 'Cooking',
+            5 => 'Cuisines',
         ];
         if (!empty($id)) {
             $data = $data[$id];
@@ -252,6 +252,18 @@ class GeneralService
         return $data;
     }
 
+    public static function getGeneralPetCareDropdown($id = null)
+    {
+        $data = [
+            1 => 'Care of cat',
+            2 => 'Care of dog',
+        ];
+        if (!empty($id)) {
+            $data = $data[$id];
+        }
+        return $data;
+    }
+
     public static function fiveStar($rating_star)
     {
         $rating = '';
@@ -278,43 +290,52 @@ class GeneralService
             'heart_disease' => __('general.heart_disease'),
             'malaria' => __('general.malaria'),
             'operations' => __('general.operations'),
-            'other' => __('general.other'),
+            'other_covid' => __('general.other_covid'),
         ];
     }
 
     public static function getCountryImage($data)
     {
         $image = '';
-        if($data == 1){
-            $image .= asset('assets/website/img/flag/singapore.png');
-        } elseif ($data == 2){
-            $image .= asset('assets/website/img/flag/myanmar.png');
-        } elseif ($data == 3){
-            $image .= asset('assets/website/img/flag/indonesia.png');
-        } elseif ($data == 4){
-            $image .= asset('assets/website/img/flag/philip.jpeg');
-        } elseif ($data == 5){
-            $image .= asset('assets/website/img/flag/cambodia.jpeg');
-        } elseif ($data == 6){
-            $image .= asset('assets/website/img/flag/india.png');
-        } elseif ($data == 7){
-            $image .= asset('assets/website/img/flag/mizoram.png');
-        } elseif ($data == 8){
-            $image .= asset('assets/website/img/flag/srilanka.png');
-        } elseif ($data == 9){
+        if ($data == 1){
             $image .= asset('assets/website/img/flag/bangladesh.png');
-        } elseif ($data == 10){
+        }elseif ($data == 2){
+            $image .= asset('assets/website/img/flag/cambodia.jpeg');
+        }elseif ($data == 3){
+            $image .= asset('assets/website/img/flag/china.jpeg');
+        }elseif ($data == 4){
+            $image .= asset('assets/website/img/flag/hong_kong.png');
+        }elseif ($data == 5){
+            $image .= asset('assets/website/img/flag/india.png');
+        }elseif ($data == 6){
+            $image .= asset('assets/website/img/flag/indonesia.png');
+        }elseif ($data == 7){
+            $image .= asset('assets/website/img/flag/japan.png');
+        }elseif ($data == 8){
+            $image .= asset('assets/website/img/flag/macau.png');
+        }elseif ($data == 9){
             $image .= asset('assets/website/img/flag/malaysia.png');
-        } elseif ($data == 11){
-            $image .= asset('assets/website/img/flag/thailand.png');
+        }elseif ($data == 10){
+            $image .= asset('assets/website/img/flag/saudi_arabia.png');
+        }elseif ($data == 11){
+            $image .= asset('assets/website/img/flag/myanmar.png');
         } elseif ($data == 12){
-            $image .= asset('assets/website/img/flag/hong-kong.png');
-        } elseif ($data == 13){
+            $image .= asset('assets/website/img/flag/philip.jpeg');
+        }elseif($data == 13){
+            $image .= asset('assets/website/img/flag/singapore.png');
+        }elseif ($data == 14){
+            $image .= asset('assets/website/img/flag/soth_korea.jpeg');
+        } elseif ($data == 15){
+            $image .= asset('assets/website/img/flag/srilanka.png');
+        } elseif ($data == 16){
             $image .= asset('assets/website/img/flag/taiwan.png');
+        }elseif ($data == 17){
+            $image .= asset('assets/website/img/flag/thailand.png');
         } else {
             $image .= asset('assets/website/img/flag/other.png');
         }
         return $image;
+
     }
 
     public static function getInterview()

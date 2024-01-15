@@ -47,6 +47,22 @@
         @empty
             <td colspan="4" class="text-center">No record found</td>
         @endforelse
+        <tr>
+            <td colspan="3">
+                <h5 class="text-dark mb-0">{{__('Care of pets')}}</h5>
+            </td>
+        </tr>
+        @forelse($model->careOfPet as $petCare)
+            <tr>
+                <td>{{ isset($petCare->pet_title) ? \App\Services\GeneralService::getGeneralPetCareDropdown($petCare->pet_title) : ''}}</td>
+                <td class="text-center">
+                    {!! (isset($petCare->willingness) && $petCare->willingness == 1) ? '<i class="fa fa-check text-success"></i>' : '<i class="fa fa-times text-danger"></i>' !!}
+                </td>
+                <td class="text-center">{!! (isset($petCare->experience) && $petCare->experience == 1) ? '<i class="fa fa-check text-success"></i>' : '<i class="fa fa-times text-danger"></i>' !!}</td>
+            </tr>
+        @empty
+            <td colspan="4" class="text-center">No record found</td>
+        @endforelse
         </tbody>
     </table>
 </div>

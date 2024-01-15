@@ -18,7 +18,17 @@
             <tbody>
             @foreach($model->skillEvaluations as $data)
                 <tr>
-                    <td>{!! isset($data->area_of_work) ? \App\Services\GeneralService::getAreaOfWork($data->area_of_work).(!empty($data->name_dishes) ? '<br><b>'.__('general.please_specify_cuisines').'</b> :'.$data->name_dishes : '') : ''!!}</td>
+                    <td>
+                        @if(isset($data->area_of_work))
+                            {!! \App\Services\GeneralService::getAreaOfWork($data->area_of_work) !!}
+                            @if(!empty($data->age_range))
+                                <br><b>{{ __('general.age_range') }}:</b> {{ $data->age_range }}
+                            @endif
+                            @if(!empty($data->name_dishes))
+                                <br><b>{{ __('general.dishes') }}:</b> {{ $data->name_dishes }}
+                            @endif
+                        @endif
+                    </td>
                     <td class="text-center">{!! (isset($data->willingness) && $data->willingness == 1) ? '<i class="fa fa-check text-success"></i>' : '<i class="fa fa-times text-danger"></i>' !!}</td>
                     <td class="text-center">{!! (isset($data->experience) && $data->experience == 1) ? '<i class="fa fa-check text-success"></i>' : '<i class="fa fa-times text-danger"></i>' !!}</td>
                     <td class="text-center">{!! isset($data->assessment) ? \App\Services\GeneralService::fiveStar($data->assessment) : 'N/A'  !!}</td>
@@ -28,8 +38,7 @@
             @if($model->languageAbilities()->count() > 0)
                 @foreach($model->languageAbilities as $lang)
                     <tr>
-                        <td>Language
-                            skill: <strong>{{isset($lang->language_id) ? \App\Services\GeneralService::languageForDropdown($lang->language_id) : 'N/A'}}</strong></td>
+                        <td>Language: <strong>{{isset($lang->language_id) ? \App\Services\GeneralService::languageForDropdown($lang->language_id) : 'N/A'}}</strong></td>
                         <td class="text-center">-</td>
                         <td class="text-center">-</td>
                         <td class="text-center">{!! isset($lang->rating) ? \App\Services\GeneralService::fiveStar($lang->rating) : 'N/A'  !!}</td>

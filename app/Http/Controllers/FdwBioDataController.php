@@ -79,6 +79,7 @@ class FdwBioDataController extends Controller
                 __('general.bio_data_detail') => '',
             ]),
         ];
+        // dd($model->skillEvaluations);
         return view('website.bio-data.view-profile', $params);
     }
 
