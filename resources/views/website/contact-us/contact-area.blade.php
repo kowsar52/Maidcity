@@ -1,6 +1,6 @@
 <!-- contact-area -->
-<section class="contact-area contact-bg" data-background="assets/img/bg/contact_bg.jpg"
-         style="background-image: url('assets/img/bg/contact_bg.jpg');">
+<section class="contact-area {{ Request::route()->getName() == 'website.home-page' ? 'contact-bg' : 'services-area-six' }}" data-background="assets/img/bg/contact_bg.jpg"
+        style="background-image: url('assets/img/bg/contact_bg.jpg');">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-5">

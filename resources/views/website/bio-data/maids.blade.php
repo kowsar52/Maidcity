@@ -116,21 +116,19 @@
                                     <div class="mb-3">
                                         <p class="mb-1 text-white fs-6">Experience</p>
                                         @foreach($d->workExperienceWithEmployers->unique('country_id') as $workExperience)
-                                        @if($workExperience->country_id != null)
-                                            @if($d->nationality != $workExperience->country_id)
-                                            <span
-                                                class="bg-danger p-1 fs-8 text-white rounded-2 m-1">
-                                                Ex-{{ \App\Services\GeneralService::countryForDropdown($workExperience->country_id) }}
-                                            </span>
-                                            @elseif($d->nationality == $workExperience->country_id && $d->workExperienceWithEmployers->count() == 1)
-                                            <span
-                                            class="bg-danger p-1 fs-8 text-white rounded-2 m-1">
-                                                {{ \App\Services\GeneralService::experienceLevelForDropdown(1) }}
-                                            </span>
-                                            @endif
-                                        @else
+                                        @if($workExperience->country_id != null && $d->nationality != $workExperience->country_id)
                                         <span
-                                                class="bg-danger p-1 fs-8 text-white rounded-2 m-1">
+                                            class="bg-danger p-1 fs-8 text-white rounded-2 m-1">
+                                            Ex-{{ \App\Services\GeneralService::countryForDropdown($workExperience->country_id) }}
+                                        </span>
+                                        @elseif($d->nationality == $workExperience->country_id && $d->workExperienceWithEmployers->count() == 1)
+                                        <span
+                                        class="bg-danger p-1 fs-8 text-white rounded-2">
+                                            {{ \App\Services\GeneralService::experienceLevelForDropdown(1) }}
+                                        </span>
+                                        @elseif($workExperience->country_id == null && $d->workExperienceWithEmployers->count() == 1)
+                                        <span
+                                        class="bg-danger p-1 fs-8 text-white rounded-2">
                                             {{ \App\Services\GeneralService::experienceLevelForDropdown(1) }}
                                         </span>
                                         @endif

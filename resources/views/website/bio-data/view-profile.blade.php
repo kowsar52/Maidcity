@@ -38,7 +38,7 @@
     @endphp
     @include('layouts.website-components.breadcrumb')
     <!-- breadcrumb-area-end -->
-    <section class="pb-50 pt-50">
+    <section class="services-area-six pb-50 pt-50">
         <div class="container">
         {{--@include('website.bio-data.components.flag')--}}
             @include('website.bio-data.components.refno-icon')

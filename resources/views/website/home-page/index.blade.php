@@ -80,6 +80,7 @@
             font-size: 14px;
             padding: 12px;
             transform: translateY(20px); /* Initial position, adjust as needed */
+            border-radius: 0 0 0.5rem 0.5rem ;
         }
 
         /* When you mouse over the container, fade in the overlay */

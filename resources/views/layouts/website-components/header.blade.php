@@ -59,7 +59,7 @@
                                         <a href="{{ route('website.contact-us') }}">{{ __('general.contact_us') }}</a></li>
                                     <li class="{{ Request::route()->getName() == 'website.jobs' ? 'active' : '' }}">
                                         <a href="{{ route('website.jobs') }}">{{ __('general.jobs') }}</a></li>
-                                    <li class="{{ Request::route()->getName() == 'website.bio-data' ? 'active' : '' }}" >
+                                    <li class="{{ Str::startsWith(request()->url(), url('bio-data')) ? 'active' : '' }}" >
                                         <a href="{{ route('website.bio-data.index') }}">{{ __('general.bio_data') }}</a></li>
                                 </ul>
                             </div>
