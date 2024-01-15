@@ -12,10 +12,10 @@
                       </div>
                   </div>
               </div>
-              <div class="col-lg-6">
+              {{-- <div class="col-lg-6">
                   <div class="about-content-three">
                       <div class="section-title-two mb-20 tg-heading-subheading animation-style3">
-                          {{-- <span class="sub-title">{{ __('general.aps') }}</span> --}}
+                          <span class="sub-title">{{ __('general.aps') }}</span>
                           <h2 class="title tg-element-title">{{ __('general.advance_placement_scheme_aps') }}</h2>
                       </div>
                       <p class="info-one">{{ isset($apsDescription->items) ? $apsDescription->items : __('general.aps_intro') }}</p>
@@ -36,7 +36,61 @@
                           </ul>
                       </div>
                   </div>
-              </div>
+              </div> --}}
+              <div class="col-xl-6 col-lg-6">
+                <div class="about-right-side">
+                    <div class="section-heading mb-55">
+                        <div class="section-heading-top mb-20">
+                            {{-- <img src="assets/images/icons/section-icon-1.png" alt=""> --}}
+                            {{-- <h5 class="sub-title"><span>01</span> About Us</h5> --}}
+                        </div>
+                        <h2 class="section-title">{{ __('general.advance_placement_scheme_aps') }}</h2>
+                        <div class="section-content">
+                            <p>{{ isset($apsDescription->items) ? $apsDescription->items : __('general.aps_intro') }}</p>
+                        </div>
+                    </div>
+                    <div class="about-list mt-none-25">
+                        @if(isset($apsList->items) && !empty($apsList->items))
+                        @foreach($apsList->items as $list)
+                        @foreach($list as $l)
+                        <div class="single-item d-flex align-items-center mt-25">
+                            <div class="icon">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                            <span>{{ $l }}</span>
+                        </div>
+                        @endforeach
+                        @endforeach
+                        @else
+                        <div class="single-item d-flex align-items-center mt-25">
+                            <div class="icon position-relative">
+                                <i class="fas fa-arrow-right owl_icon"></i>
+                            </div>
+                            <span>{{ __('general.face_to_face_interview') }}</span>
+                        </div>
+                        <div class="single-item d-flex align-items-center mt-25">
+                            <div class="icon position-relative">
+                                <i class="fas fa-arrow-right owl_icon"></i>
+                            </div>
+                            <span>{{ __('general.better_matching') }}</span>
+                        </div>
+                        <div class="single-item d-flex align-items-center mt-25">
+                            <div class="icon position-relative">
+                                <i class="fas fa-arrow-right owl_icon"></i>
+                            </div>
+                            <span>{{ __('general.fast_deploment_3_days') }}</span>
+                        </div>
+                        <div class="single-item d-flex align-items-center mt-25">
+                            <div class="icon position-relative">
+                                <i class="fas fa-arrow-right owl_icon"></i>
+                            </div>
+                            <span>{{ __('general.by_ministry_of_Manpower_mom') }}</span>
+                        </div>
+                        @endif
+                       
+                    </div>
+                </div>
+            </div>
           </div>
       </div>
       <div class="about-shape-wrap-two">

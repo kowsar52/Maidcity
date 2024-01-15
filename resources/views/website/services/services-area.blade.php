@@ -1,5 +1,5 @@
 <!-- services-area -->
-<section class="services-area-six">
+{{-- <section class="services-area-six">
     <div class="container">
         @isset($services)
             <div class="row align-items-center">
@@ -43,5 +43,43 @@
             @endif
         </div>
     </div>
-</section>
+</section> --}}
+<div class="serviesType services-area-six">
+    <div class="container">
+        <div class="row align-items-baseline">
+            <div class="col-md-6 ">
+                {{-- <div class="d-flex"> --}}
+                    {{-- <div class="left"><img src="{{ asset('storage/services/feature_images/01HJ8KK0W3T5Z2D2949JYK5ZPE.jpg') }}" alt="" id="SERVICES_IMG"></div> --}}
+                    <div class="rgt">
+                    <h2 class="text-danger">Our Services</h2>
+                    <h3>MaidCity</h3>
+                    <p>Make sure that your home care needs are met. Choose from a vast pool of candidates spanning four nationalities: Indonesia, Myanmar, Mizoram (India) and the Philippines.</p>
+                    <div class="padding10"></div>
+                    <a href="{{ route('website.services.index') }}" class="commonBtn darkBlue">Find Out More</a>
+                </div>
+                {{-- </div> --}}
+            </div>
+            <div class="btns col-md-6 text-center">
+                <ul>
+                    @forelse($services as $d)
+                    <li>
+                        <a href="{{ route('website.services.show', $d->id) }}" class="">
+                            <div class="btnGroup">
+                                <div class="icon"><img src="{{ isset($d->feature_image) ? asset('storage/'.$d->feature_image) : asset('assets/website/img/services/maid.png') }}" alt="Maids"></div>
+                                <div class="text fs-7 fw-bold">{{ $d->title ?? 'N/A' }}</div>
+                            </div>
+                        </a>
+                    </li>
+                    @empty
+                    <div class="text-center">
+                        <h4>{{__('general.no_services_available')}}</h4>
+                    </div>
+                    @endforelse
+                    
+                </ul>
+            </div>
+           
+        </div>
+    </div>
+</div>
 <!-- services-area-end -->
