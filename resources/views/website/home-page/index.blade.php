@@ -1,9 +1,9 @@
 @extends('layouts.website')
 @section('css-after')
     <style>
-        .show-read-more .more-text{
+        /* .show-read-more .more-text{
             display: none;
-        }
+        } */
         .slider_img_h {
             height: 600px !important;
             object-fit: cover !important;
@@ -113,24 +113,30 @@
 @section('innerScriptFiles')
 @endsection
 @section('innerScript')
+<script>
+    $(document).ready(function(){
+        console.log('alamin');
+
+           const maxLength = 73;
+           $(".show-read-more").each(function(){
+               const myStr = $(this).text();
+               console.log(myStr);
+               if($.trim(myStr).length > maxLength){
+                   const newStr = myStr.substring(0, maxLength);
+                   const removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+                   $(this).empty().html(newStr);
+                   $(this).append(' <a href="javascript:void(0);" class="read-more">...read more</a>');
+                   $(this).append('<span class="more-text">' + removedStr + '</span>');
+               }
+           });
+           $(".read-more").click(function(){
+               $(this).siblings(".more-text").contents().unwrap();
+               $(this).remove();
+           });
+       });
+</script>
     <script>
-        $(document).ready(function(){
-            const maxLength = 73;
-            $(".show-read-more").each(function(){
-                const myStr = $(this).text();
-                if($.trim(myStr).length > maxLength){
-                    const newStr = myStr.substring(0, maxLength);
-                    const removedStr = myStr.substring(maxLength, $.trim(myStr).length);
-                    $(this).empty().html(newStr);
-                    $(this).append(' <a href="javascript:void(0);" class="read-more">...read more</a>');
-                    $(this).append('<span class="more-text">' + removedStr + '</span>');
-                }
-            });
-            $(".read-more").click(function(){
-                $(this).siblings(".more-text").contents().unwrap();
-                $(this).remove();
-            });
-        });
+       
         /*--------------------------
      slider carousel
 ---------------------------- */
@@ -150,6 +156,24 @@ intro_carousel.owlCarousel({
 		},
 		1000:{
 			items:1
+		}
+	}
+});
+var testimonial_carousel = $('.rs-carousel');
+testimonial_carousel.owlCarousel({
+	loop:true,
+	nav:true,
+	autoplay:false,
+	dots:false,
+	responsive:{
+		0:{
+			items:1
+		},
+		600:{
+			items:2
+		},
+		1000:{
+			items:3
 		}
 	}
 });
