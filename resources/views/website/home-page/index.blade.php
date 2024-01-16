@@ -118,7 +118,7 @@
     $(document).ready(function(){
         console.log('alamin');
 
-           const maxLength = 73;
+           const maxLength = 80;
            $(".show-read-more").each(function(){
                const myStr = $(this).text();
                console.log(myStr);
